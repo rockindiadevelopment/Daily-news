@@ -1,0 +1,109 @@
+/* ===== Custom Animations & Styles ===== */
+
+/* Marquee ticker animation */
+@keyframes marquee {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+.animate-marquee {
+    animation: marquee 25s linear infinite;
+}
+
+/* Card entrance animation */
+@keyframes fadeSlideUp {
+    from { opacity: 0; transform: translateY(30px) scale(0.97); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+.animate-card-in {
+    animation: fadeSlideUp 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    opacity: 0;
+}
+
+/* Toast slide-in */
+@keyframes toastIn {
+    from { opacity: 0; transform: translateX(100px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+@keyframes toastOut {
+    from { opacity: 1; transform: translateX(0); }
+    to { opacity: 0; transform: translateX(100px); }
+}
+.toast-enter { animation: toastIn 0.4s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+.toast-exit { animation: toastOut 0.3s ease-in forwards; }
+
+/* Modal animation */
+@keyframes modalIn {
+    from { opacity: 0; transform: scale(0.9) translateY(20px); }
+    to { opacity: 1; transform: scale(1) translateY(0); }
+}
+.modal-animate-in {
+    animation: modalIn 0.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* Hide scrollbar utility */
+.scrollbar-hide::-webkit-scrollbar { display: none; }
+.scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* News card hover effects */
+.news-card {
+    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s ease;
+}
+.news-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+}
+.dark .news-card:hover {
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
+}
+.news-card .card-image {
+    transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.news-card:hover .card-image {
+    transform: scale(1.08);
+}
+
+/* Category button states - defaults to dark since dark mode is default */
+.cat-btn {
+    background: #1e293b;
+    color: #94a3b8;
+}
+.dark .cat-btn {
+    background: #1e293b;
+    color: #94a3b8;
+}
+.cat-btn:hover {
+    background: #334155;
+    color: #e2e8f0;
+}
+.dark .cat-btn:hover {
+    background: #334155;
+    color: #e2e8f0;
+}
+.active-cat {
+    background: linear-gradient(135deg, #6366f1, #4f46e5) !important;
+    color: white !important;
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.35);
+}
+
+/* Prose styling for article content */
+.prose p { margin-bottom: 1em; }
+.prose { font-size: 1rem; line-height: 1.75; }
+
+/* Smooth scrollbar for modal */
+#modal-content::-webkit-scrollbar { width: 6px; }
+#modal-content::-webkit-scrollbar-thumb { background: #94a3b8; border-radius: 99px; }
+#modal-content::-webkit-scrollbar-track { background: transparent; }
+
+/* Pulse animation for breaking badge */
+@keyframes pulse-badge {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.6; }
+}
+
+/* Admin action buttons */
+.action-btn {
+    transition: all 0.2s ease;
+}
+.action-btn:hover {
+    transform: scale(1.1);
+}
